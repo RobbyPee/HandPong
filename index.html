@@ -173,8 +173,7 @@ let finalScore = 0;
         currentStream.getTracks().forEach(track => track.stop());
       }
       if (animationId) cancelAnimationFrame(animationId);
-
-      navigator.mediaDevices.getUserMedia({ video: { deviceId: { exact: deviceId } } })
+      navigator.mediaDevices.getUserMedia({ video: deviceId ? { deviceId: { ideal: deviceId } } : true })
         .then(stream => {
           video.srcObject = stream;
           currentStream = stream;
